@@ -6,7 +6,7 @@ const Product = () => {
 
     const { productId } = router.query;
 
-    return <div>Product {productId} Detail</div>;
+    return <div>Product {productId} details.</div>;
 };
 
 export default Product;
