@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { User } from "../../components/User";
 
 function Users({ users }) {
     return (
@@ -12,7 +13,7 @@ function Users({ users }) {
             <h1>List of users</h1>
             <ul>
                 {users.map((user) => (
-                    <li key={user.id.toString()}>{user.name}</li>
+                    <User user={user} key={user.id.toString()} />
                 ))}
             </ul>
         </>
