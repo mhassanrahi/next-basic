@@ -17,7 +17,7 @@ export async function getStaticProps() {
     const posts = await res.json();
 
     return {
-        props: { posts: posts.slice(0, 11) },
+        props: { posts: posts.slice(0, 10) },
     };
 }
 export default Posts;

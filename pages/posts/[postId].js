@@ -22,19 +22,16 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-    return {
-        paths: [
-            { params: { postId: "1" } },
-            { params: { postId: "2" } },
-            { params: { postId: "3" } },
-            { params: { postId: "4" } },
-            { params: { postId: "5" } },
-            { params: { postId: "6" } },
-            { params: { postId: "7" } },
-            { params: { postId: "8" } },
-            { params: { postId: "9" } },
-            { params: { postId: "10" } },
-        ],
-        fallback: false,
-    };
+    // Call an external API endpoint to get posts
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+    let posts = await res.json();
+
+    posts = posts.slice(0, 10);
+
+    // Get the paths we want to pre-render based on posts
+    const paths = posts.map((post) => ({
+        params: { postId: post.id.toString() },
+    }));
+
+    return { paths, fallback: false };
 }
