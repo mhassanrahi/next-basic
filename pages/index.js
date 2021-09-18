@@ -19,6 +19,10 @@ const Home = () => {
                 <a>Products</a>
             </Link>
             <br />
+            <Link href="/users">
+                <a>Users</a>
+            </Link>
+            <br />
             <button onClick={handleClick}>Place Order</button>
         </>
     );
