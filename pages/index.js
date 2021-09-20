@@ -23,6 +23,10 @@ const Home = () => {
                 <a>Users</a>
             </Link>
             <br />
+            <Link href="/posts">
+                <a>Posts</a>
+            </Link>
+            <br />
             <button onClick={handleClick}>Place Order</button>
         </>
     );
